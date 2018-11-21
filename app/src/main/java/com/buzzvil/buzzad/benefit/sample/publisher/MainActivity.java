@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean closeInterstitialView() {
         if (interstitialView != null) {
             nativeAd.unregisterView();
+            nativeAd = null;
             ((ViewGroup) interstitialView.getParent()).removeView(interstitialView);
             interstitialView = null;
             return true;
