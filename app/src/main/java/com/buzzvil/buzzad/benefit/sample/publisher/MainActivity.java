@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private Button feedButton;
     private ProgressBar progressBar;
     private View interstitialView;
-    private FeedHandler feedHandler;
     private NativeAd nativeAd;
 
     @Override
@@ -46,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        feedHandler = new FeedHandler();
         feedButton = findViewById(R.id.feed_button);
         feedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final FeedHandler feedHandler = new FeedHandler();
                 feedHandler.startFeedActivity(MainActivity.this);
             }
         });
