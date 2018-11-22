@@ -5,8 +5,6 @@ import android.app.Application;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.ui.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.ui.FeedConfig;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class App extends Application {
 
@@ -34,7 +32,5 @@ public class App extends Application {
                 .build();
 
         BuzzAdBenefit.setUserProfile(userProfile);
-
-        ImageLoader.getInstance().init(new ImageLoaderConfiguration.Builder(this).build());
     }
 }

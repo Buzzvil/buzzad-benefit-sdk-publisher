@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
 import com.buzzvil.buzzad.benefit.core.models.Ad;
 import com.buzzvil.buzzad.benefit.ui.feed.FeedHandler;
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         mediaView.setCreative(ad.getCreative());
         titleTextView.setText(ad.getTitle());
         descriptionTextView.setText(ad.getDescription());
+        Glide.with(this).load(ad.getIconUrl()).into(iconImageView);
         ImageLoader.getInstance().displayImage(ad.getIconUrl(), iconImageView);
         ctaView.setRewardText(String.format(Locale.US, "+%d", ad.getReward()));
         ctaView.setCallToActionText(ad.getCallToAction());
