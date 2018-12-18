@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadNativeAd() {
         progressBar.setVisibility(View.VISIBLE);
-        final NativeAdLoader loader = new NativeAdLoader(this, App.UNIT_ID_NATIVE_AD);
+        final NativeAdLoader loader = new NativeAdLoader(App.UNIT_ID_NATIVE_AD);
         loader.loadAd(new NativeAdLoader.OnAdLoadedListener() {
             @Override
             public void onLoadError(@NonNull AdError adError) {
@@ -77,16 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAdLoaded(@NonNull NativeAd nativeAd) {
                 progressBar.setVisibility(View.GONE);
 
-                nativeAd.setAdEventListener(new NativeAd.OnAdEventListener() {
-                    @Override
-                    public void onAdParticipated(@NonNull NativeAd nativeAd) {
-                        final CtaView ctaView = interstitialView.findViewById(R.id.ad_cta_view);
-                        ctaView.setParticipated(true);
-                        ctaView.setRewardText(null);
-                    }
-                });
-
-                interstitialView = populateAd(nativeAd);
+                MainActivity.this.interstitialView = populateAd(nativeAd);
                 interstitialView.findViewById(R.id.ad_close_text).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -129,6 +120,25 @@ public class MainActivity extends AppCompatActivity {
         nativeAdView.setMediaView(mediaView);
         nativeAdView.setClickableViews(clickableViews);
         nativeAdView.setNativeAd(nativeAd);
+
+        nativeAdView.setOnNativeAdEventListener(new NativeAdView.OnNativeAdEventListener() {
+            @Override
+            public void onImpressed(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
+
+            }
+
+            @Override
+            public void onClicked(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
+
+            }
+
+            @Override
+            public void onParticipated(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
+                final CtaView ctaView = interstitialView.findViewById(R.id.ad_cta_view);
+                ctaView.setParticipated(true);
+                ctaView.setRewardText(null);
+            }
+        });
 
         return interstitialView;
     }
