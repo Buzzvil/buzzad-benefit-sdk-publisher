@@ -33,7 +33,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
                         android:text="앱 열자마자 포인트 적립!"
-                        android:textAllCaps="true"
                         android:textColor="@android:color/black"
                         android:textSize="14sp" />
 
