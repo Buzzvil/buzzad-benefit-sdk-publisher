@@ -93,7 +93,6 @@ public class NativeAdsView extends FrameLayout {
             final ImageView iconImageView = nativeAdView.findViewById(R.id.ad_icon_image);
             final CtaView ctaView = nativeAdView.findViewById(R.id.ad_cta_view);
 
-            // 2) Assign ad properties.
             mediaView.setCreative(ad.getCreative());
             titleTextView.setText(ad.getTitle());
             descriptionTextView.setText(ad.getDescription());
@@ -101,15 +100,12 @@ public class NativeAdsView extends FrameLayout {
             ctaView.setRewardText(String.format(Locale.US, "+%d", ad.getReward()));
             ctaView.setCallToActionText(ad.getCallToAction());
 
-            // 3) Create a list of clickable views.
             final List<View> clickableViews = new ArrayList<>();
             clickableViews.add(ctaView);
-            // optional
             clickableViews.add(mediaView);
             clickableViews.add(titleTextView);
             clickableViews.add(descriptionTextView);
 
-            // 4) Setup relevant views and native ad.
             nativeAdView.setMediaView(mediaView);
             nativeAdView.setClickableViews(clickableViews);
             nativeAdView.setNativeAd(nativeAd);
