@@ -44,7 +44,7 @@ public class NativeAdsView extends FrameLayout {
         this.tabLayoutDots = findViewById(R.id.tab_layout_dots);
         final int pagerDistance = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, PAGER_DISTANCE_DP, getResources().getDisplayMetrics());
         pager.setClipToPadding(false);
-        pager.setPadding(pagerDistance, 0, pagerDistance * 2, 0);
+        pager.setPadding(pagerDistance * 2, 0, pagerDistance * 2, 0);
         pager.setPageMargin(pagerDistance);
         tabLayoutDots.setupWithViewPager(pager);
     }
