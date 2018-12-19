@@ -32,12 +32,19 @@
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
+                android:layout_weight="1"
                 android:text="앱 열자마자 포인트 적립!"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/close_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close" />
 
         </LinearLayout>
 

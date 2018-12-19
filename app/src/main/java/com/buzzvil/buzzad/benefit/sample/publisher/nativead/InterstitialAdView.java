@@ -1,4 +1,4 @@
-package com.buzzvil.buzzad.benefit.sample.publisher;
+package com.buzzvil.buzzad.benefit.sample.publisher.nativead;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -16,6 +16,7 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
+import com.buzzvil.buzzad.benefit.sample.publisher.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -14,6 +14,8 @@ import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdLoader;
+import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
+import com.buzzvil.buzzad.benefit.sample.publisher.nativead.PagerAdsView;
 
 import java.util.Collection;
 
@@ -105,9 +107,15 @@ public class MainActivity extends AppCompatActivity {
             public void onAdsLoaded(@NonNull Collection<NativeAd> collection) {
                 progressBar.setVisibility(View.GONE);
 
-                NativeAdsView nativeAdsView = new NativeAdsView(MainActivity.this);
-                nativeAdsView.setNativeAds(collection);
-                MainActivity.this.adView = nativeAdsView;
+                PagerAdsView pagerAdsView = new PagerAdsView(MainActivity.this);
+                pagerAdsView.setOnCloseClickListener(new PagerAdsView.OnCloseClickListener() {
+                    @Override
+                    public void onCloseClick() {
+                        closeAdView();
+                    }
+                });
+                pagerAdsView.setNativeAds(collection);
+                MainActivity.this.adView = pagerAdsView;
                 ((ViewGroup) findViewById(android.R.id.content)).addView(adView);
             }
         }, 5);

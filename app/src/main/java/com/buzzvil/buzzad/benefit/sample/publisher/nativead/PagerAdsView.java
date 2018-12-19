@@ -1,4 +1,4 @@
-package com.buzzvil.buzzad.benefit.sample.publisher;
+package com.buzzvil.buzzad.benefit.sample.publisher.nativead;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -20,33 +20,51 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
+import com.buzzvil.buzzad.benefit.sample.publisher.R;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
-public class NativeAdsView extends FrameLayout {
+public class PagerAdsView extends FrameLayout {
+    private static final int PAGER_DISTANCE_DP = 16;
     private ViewPager pager;
     private TabLayout tabLayoutDots;
     private NativeAdsAdapter nativeAdsAdapter;
 
-    private static final int PAGER_DISTANCE_DP = 16;
+    public interface OnCloseClickListener {
+        void onCloseClick();
+    }
 
-    public NativeAdsView(@NonNull Context context) {
+    private OnCloseClickListener onCloseClickListener;
+
+    public PagerAdsView(@NonNull Context context) {
         this(context, null);
     }
 
-    public NativeAdsView(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public PagerAdsView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater.from(context).inflate(R.layout.view_native_ads, this);
+        LayoutInflater.from(context).inflate(R.layout.view_pager_ads, this);
         this.pager = findViewById(R.id.pager);
         this.tabLayoutDots = findViewById(R.id.tab_layout_dots);
+        findViewById(R.id.close_image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onCloseClickListener != null) {
+                    onCloseClickListener.onCloseClick();
+                }
+            }
+        });
         final int pagerDistance = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, PAGER_DISTANCE_DP, getResources().getDisplayMetrics());
         pager.setClipToPadding(false);
         pager.setPadding(pagerDistance * 2, 0, pagerDistance * 2, 0);
         pager.setPageMargin(pagerDistance);
         tabLayoutDots.setupWithViewPager(pager);
+    }
+
+    public void setOnCloseClickListener(OnCloseClickListener onCloseClickListener) {
+        this.onCloseClickListener = onCloseClickListener;
     }
 
     public void setNativeAds(Collection<NativeAd> nativeAds) {
