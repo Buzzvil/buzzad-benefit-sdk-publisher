@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 final FeedConfig feedConfig = new FeedConfig.Builder(App.UNIT_ID_FEED)
                         .title("BuzzAdBenefit Feed")
                         .primaryColor("#1290FF")
-                        .adsAdapterClass(CustomAdsAdapter.class)
                         .build();
                 final FeedHandler feedHandler = new FeedHandler(feedConfig);
                 feedHandler.startFeedActivity(MainActivity.this);
