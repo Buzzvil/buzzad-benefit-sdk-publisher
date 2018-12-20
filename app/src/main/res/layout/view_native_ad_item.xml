@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            card_view:cardCornerRadius="8dp">
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="0dp">
 
             <com.buzzvil.buzzad.benefit.presentation.media.MediaView
                 android:id="@+id/ad_media_view"
