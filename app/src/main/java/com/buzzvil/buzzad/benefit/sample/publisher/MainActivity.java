@@ -54,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final FeedConfig feedConfig = new FeedConfig.Builder(App.UNIT_ID_FEED)
-                        .title("BuzzAdBenefit Feed")
-                        .primaryColor("#1290FF")
-                        .adsAdapterClass(CustomAdsAdapter.class)
+//                        .adsAdapterClass(CustomAdsAdapter.class)
+//                        .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
                         .build();
                 final FeedHandler feedHandler = new FeedHandler(feedConfig);
                 feedHandler.startFeedActivity(MainActivity.this);
