@@ -131,7 +131,7 @@ public class PagerAdsView extends FrameLayout {
             nativeAdView.setClickableViews(clickableViews);
             nativeAdView.setNativeAd(nativeAd);
 
-            nativeAdView.setOnNativeAdEventListener(new NativeAdView.OnNativeAdEventListener() {
+            nativeAdView.addOnNativeAdEventListener(new NativeAdView.OnNativeAdEventListener() {
                 @Override
                 public void onImpressed(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
 
