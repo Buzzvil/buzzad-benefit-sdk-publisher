@@ -50,7 +50,7 @@ public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> 
                 @Override
                 public void onVideoError(@NonNull Context context, @NonNull VideoErrorStatus errorStatus, @Nullable String errorMessage) {
                     if (errorMessage != null) {
-                        Toast.makeText(view.getContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
                     }
                 }
             });

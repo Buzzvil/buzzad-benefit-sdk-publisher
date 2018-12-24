@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.buzzvil.buzzad.benefit.core.models.Ad;
@@ -16,6 +17,7 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
+import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
 
 import java.util.ArrayList;
@@ -68,6 +70,14 @@ public class InterstitialAdView extends FrameLayout {
         final Ad ad = nativeAd.getAd();
 
         mediaView.setCreative(ad.getCreative());
+        mediaView.setOnMediaEventListener(new MediaView.OnMediaEventListener() {
+            @Override
+            public void onVideoError(@NonNull Context context, @NonNull VideoErrorStatus errorStatus, @Nullable String errorMessage) {
+                if (errorMessage != null) {
+                    Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         titleTextView.setText(ad.getTitle());
         descriptionTextView.setText(ad.getDescription());
         Glide.with(this).load(ad.getIconUrl()).into(iconImageView);
