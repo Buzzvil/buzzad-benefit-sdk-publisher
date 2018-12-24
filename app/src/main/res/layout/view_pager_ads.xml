@@ -14,29 +14,31 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/top_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="12dp"
+            android:layout_margin="12dp"
             android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:id="@+id/top_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/bg_native_ad_top_icon"
                 android:padding="8dp"
                 android:src="@drawable/ic_gift" />
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_weight="1"
-                android:text="앱 열자마자 포인트 적립!"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/top_icon"
+                android:text="@string/native_ad_sample_title"
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
 
@@ -44,9 +46,10 @@
                 android:id="@+id/close_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:src="@drawable/ic_close" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <com.buzzvil.buzzad.benefit.sample.publisher.MeasuredViewPager
             android:id="@+id/pager"
