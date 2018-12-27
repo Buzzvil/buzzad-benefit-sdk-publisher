@@ -8,22 +8,24 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedHeaderViewAdapter;
+import com.buzzvil.buzzad.benefit.sample.publisher.R;
 
 public class CustomFeedHeaderViewAdapter implements FeedHeaderViewAdapter {
     @NonNull
     @Override
     public View onCreateView(final Context context, final ViewGroup parent) {
         final LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        return inflater.inflate(com.buzzvil.buzzad.benefit.presentation.feed.R.layout.bz_view_feed_header, parent, false);
+        return inflater.inflate(R.layout.bz_view_feed_header, parent, false);
     }
 
     @Override
     public void onBindView(final View view, final int reward) {
-        final TextView rewardTextView = view.findViewById(com.buzzvil.buzzad.benefit.presentation.feed.R.id.rewardText);
+        final View rewardLayout = view.findViewById(R.id.rewardLayout);
         if (reward == 0) {
-            rewardTextView.setVisibility(View.GONE);
+            rewardLayout.setVisibility(View.GONE);
         } else {
-            rewardTextView.setVisibility(View.VISIBLE);
+            rewardLayout.setVisibility(View.VISIBLE);
+            final TextView rewardTextView = view.findViewById(R.id.rewardText);
             final String rewardText = view.getContext().getString(com.buzzvil.buzzad.benefit.presentation.feed.R.string.bz_feed_header_view_reward_text, reward);
             rewardTextView.setText(rewardText);
         }
