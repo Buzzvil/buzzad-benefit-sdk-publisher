@@ -30,7 +30,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class PagerAdsView extends FrameLayout {
-    private static final int PAGER_DISTANCE_DP = 16;
+    private static final int PAGE_MARGIN_DP = 16;
+    private static final int PAGER_PADDING_DP = 24;
+
     private ViewPager pager;
     private TabLayout tabLayoutDots;
     private NativeAdsAdapter nativeAdsAdapter;
@@ -58,10 +60,11 @@ public class PagerAdsView extends FrameLayout {
                 }
             }
         });
-        final int pagerDistance = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, PAGER_DISTANCE_DP, getResources().getDisplayMetrics());
         pager.setClipToPadding(false);
-        pager.setPadding(pagerDistance * 2, 0, pagerDistance * 2, 0);
-        pager.setPageMargin(pagerDistance);
+        final int pagerPadding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, PAGER_PADDING_DP, getResources().getDisplayMetrics());
+        pager.setPadding(pagerPadding, 0, pagerPadding, 0);
+        final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, PAGE_MARGIN_DP, getResources().getDisplayMetrics());
+        pager.setPageMargin(pageMargin);
         tabLayoutDots.setupWithViewPager(pager);
     }
 
