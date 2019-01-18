@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedHeaderViewAdapter;
+import com.buzzvil.buzzad.benefit.presentation.feed.header.FeedHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
 
 public class CustomFeedHeaderViewAdapter implements FeedHeaderViewAdapter {

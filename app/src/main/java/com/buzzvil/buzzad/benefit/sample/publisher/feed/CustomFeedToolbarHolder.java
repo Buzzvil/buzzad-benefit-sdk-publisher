@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.view.View;
 
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedActivityToolbar;
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedToolbarHolder;
+import com.buzzvil.buzzad.benefit.presentation.feed.toolbar.FeedActivityToolbar;
+import com.buzzvil.buzzad.benefit.presentation.feed.toolbar.FeedToolbarHolder;
 
 import java.util.Locale;
 

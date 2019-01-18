@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.buzzvil.buzzad.benefit.core.models.Ad;
-import com.buzzvil.buzzad.benefit.presentation.feed.AdsAdapter;
+import com.buzzvil.buzzad.benefit.presentation.feed.ad.AdsAdapter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
@@ -27,7 +27,7 @@ import java.util.Locale;
 public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> {
 
     @Override
-    public NativeAdViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AdsAdapter.NativeAdViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final NativeAdView feedAdView = (NativeAdView) inflater.inflate(R.layout.bz_view_feed_ad, parent, false);
         return new NativeAdViewHolder(feedAdView);
