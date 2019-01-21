@@ -109,6 +109,7 @@ public class InterstitialAdView extends FrameLayout {
             public void onParticipated(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
                 ctaView.setParticipated(true);
                 ctaView.setRewardText(null);
+                ctaView.setCallToActionText(nativeAdView.getResources().getString(R.string.bz_cta_done));
             }
         });
     }

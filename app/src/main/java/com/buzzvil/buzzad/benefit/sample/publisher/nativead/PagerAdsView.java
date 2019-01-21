@@ -157,6 +157,7 @@ public class PagerAdsView extends FrameLayout {
                     final CtaView ctaView = nativeAdView.findViewById(R.id.ad_cta_view);
                     ctaView.setParticipated(true);
                     ctaView.setRewardText(null);
+                    ctaView.setCallToActionText(nativeAdView.getResources().getString(R.string.bz_cta_done));
                 }
             });
 
