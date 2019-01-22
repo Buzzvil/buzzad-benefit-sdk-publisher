@@ -87,19 +87,4 @@ public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> 
         view.setMediaView(mediaView);
         view.setClickableViews(clickableViews);
     }
-
-    @Override
-    public void onImpressed(@NonNull NativeAdView view, @NonNull NativeAd nativeAd) {
-        super.onImpressed(view, nativeAd);
-    }
-
-    @Override
-    public void onClicked(@NonNull NativeAdView view, @NonNull NativeAd nativeAd) {
-        super.onClicked(view, nativeAd);
-    }
-
-    @Override
-    public void onParticipated(@NonNull NativeAdView view, @NonNull NativeAd nativeAd) {
-        super.onParticipated(view, nativeAd);
-    }
 }
