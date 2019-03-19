@@ -90,6 +90,9 @@ public class InterstitialAdView extends FrameLayout {
         if (Creative.Type.IMAGE.equals(ad.getCreative().getType())) {
             titleLayout.setVisibility(View.GONE);
             descriptionTextView.setVisibility(View.GONE);
+        } else {
+            titleLayout.setVisibility(View.VISIBLE);
+            descriptionTextView.setVisibility(View.VISIBLE);
         }
 
         final List<View> clickableViews = new ArrayList<>();
