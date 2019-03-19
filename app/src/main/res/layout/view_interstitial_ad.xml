@@ -45,6 +45,7 @@
                         android:minHeight="100dp" />
 
                     <LinearLayout
+                        android:id="@+id/ad_title_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"

@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.adView = interstitialAdView;
                 ((ViewGroup) findViewById(android.R.id.content)).addView(adView);
             }
-        });
+        }, true);
     }
 
     private void loadNativeAds() {
