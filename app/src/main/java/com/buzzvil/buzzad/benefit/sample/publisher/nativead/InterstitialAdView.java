@@ -87,7 +87,8 @@ public class InterstitialAdView extends FrameLayout {
         final CtaPresenter ctaPresenter = new CtaPresenter(ctaView);
         ctaPresenter.bind(nativeAd);
 
-        if (Creative.Type.IMAGE.equals(ad.getCreative().getType())) {
+        final Creative.Type creativeType = ad.getCreative() == null ? null : ad.getCreative().getType();
+        if (Creative.Type.IMAGE.equals(creativeType)) {
             titleLayout.setVisibility(View.GONE);
             descriptionTextView.setVisibility(View.GONE);
         } else {
