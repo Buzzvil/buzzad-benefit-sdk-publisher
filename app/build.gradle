@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.buzzvil.buzzad.benefit.sample.publisher"
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 16
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation ("com.buzzvil:buzzad-benefit:1.7.4") {
+    implementation ("com.buzzvil:buzzad-benefit:1.7.5") {
         // Pop is not released for public use yet.
         // Exclude this module so that your app does not include any unnecessary permissions in the manifest.
         exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
